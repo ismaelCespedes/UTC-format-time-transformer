@@ -38,7 +38,7 @@ public class TimeTransformerServiceImpl implements TimeTransformerService {
     }
 
     @Override
-    public byte[] getChangedTimezoneJsonFile(TimeRequest timeRequest) throws Exception {
+    public byte[] getChangedTimezoneBytes(TimeRequest timeRequest) throws Exception {
         TimeRequest timeResponse = changeTimezone(timeRequest);
         String timeResponseJson = mapper.writeValueAsString(new Response(timeResponse));
 

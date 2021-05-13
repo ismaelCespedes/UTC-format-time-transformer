@@ -20,6 +20,7 @@ public class TimeTransformerController {
             produces = MediaType.APPLICATION_OCTET_STREAM_VALUE
     )
     public @ResponseBody byte[] transformType(@RequestBody TimeRequest timeRequest) throws Exception {
-        return timeTransformerService.getChangedTimezoneJsonFile(timeRequest);
+        return timeTransformerService.getChangedTimezoneBytes(timeRequest);
     }
+
 }
