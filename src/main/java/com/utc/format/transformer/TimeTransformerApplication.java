@@ -2,24 +2,12 @@ package com.utc.format.transformer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class TimeTransformerApplication extends SpringBootServletInitializer {
-
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(TimeTransformerApplication.class);
-    }
-
-    public static void main(String[] args)  {
-        //BasicConfigurator.configure();
-        SpringApplication.run(TimeTransformerApplication.class, args);
-    }/*{
+public class TimeTransformerApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(TimeTransformerApplication.class, args);
-    }*/
+    }
 
 }
