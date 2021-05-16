@@ -1,25 +1,24 @@
 ## UTC-format-time-transformer
-This is a service that returns the time in UTC format within a JSON file developed with Spring Boot.
+This is a service that receives a time and a timeZone and returns the time in UTC format within a JSON file, it is developed with Spring Boot.
 ## Used components:
--java 11
--maven 3.6.3
--spring boot 2.4.2
+-Java 11 <br />
+-Maven 3.6.3 <br />
+-Spring boot 2.4.2 <br />
 
 ## Instructions for use:
-The service is running on the endpoint POST {{domain}}/api/transform-time
-requires a body with the format:
-{
-     "time": "HH: mm: ss",
-     "timezone": "(+/-) HH:mm or H:m or H"
-}
+The service is running on the endpoint POST {{domain}}/api/transform-time. Requires a body with the format:<br />
+{<br />
+     "time": "HH: mm: ss",<br />
+     "timezone": "(+/-) HH:mm or H:m or H"<br />
+}<br />
 
-example:
-     POST localhost:8080/api/transform-time
-     body:
-          {
-               "time": "10:04:00",
-               "timezone": "-11"
-          }
+example:<br />
+     POST localhost:8080/api/transform-time<br />
+     body:<br />
+          {<br />
+               "time": "10:04:00",<br />
+               "timezone": "-11"<br />
+          }<br />
           
 ## the curl request is:      
 curl --location --request POST 'https://spring-format-transformet-serv.herokuapp.com/api/transform-time' \
@@ -29,6 +28,6 @@ curl --location --request POST 'https://spring-format-transformet-serv.herokuapp
     "timezone": "-1"
 }'
 
-The response returned is of type "application/octet-stream" since it is a file with extension .json 
+The response returned is of type "application/octet-stream" since it is a file with extension .json <br />
 
 This service is published in the Url: https://spring-format-transformet-serv.herokuapp.com/
