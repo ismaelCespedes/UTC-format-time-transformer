@@ -1,5 +1,6 @@
 package com.utc.format.transformer.controller;
 
+import com.utc.format.transformer.model.Response;
 import com.utc.format.transformer.model.TimeRequest;
 import com.utc.format.transformer.service.TimeTransformerService;
 import org.springframework.http.MediaType;
@@ -21,6 +22,13 @@ public class TimeTransformerController {
     )
     public @ResponseBody byte[] transformType(@RequestBody TimeRequest timeRequest) throws Exception {
         return timeTransformerService.getChangedTimezoneBytes(timeRequest);
+    }
+
+    @PostMapping(value = "/transform-time/json")
+    public @ResponseBody
+    Response transformTypeUsingJson(@RequestBody TimeRequest timeRequest) throws Exception {
+        TimeRequest timeResponse = timeTransformerService.changeTimezone(timeRequest);
+        return new Response(timeResponse);
     }
 
 }
